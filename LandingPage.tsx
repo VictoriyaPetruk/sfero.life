@@ -535,10 +535,6 @@ function WheelOfLife() {
 export function LandingPage() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  const goToApp = () => {
-    window.location.href = '/';
-  };
-
   return (
     <div className="min-h-screen text-white overflow-x-hidden" style={{ background: '#0a0e1a' }}>
 
