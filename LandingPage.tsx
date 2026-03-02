@@ -274,14 +274,9 @@ function WaitlistForm({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
     setError('');
 
     try {
-      await emailjs.send(
-        "service_dbcalgi",
-        "template_l21ckqw",
-        {
-          user_email: email,
-          sent_at: new Date().toLocaleString(),
-        },
-      );
+      await emailjs.send("service_dbcalgi", "template_l21ckqw", {
+        user_email: email,
+      });
       setSubmitted(true);
     } catch {
       setError('Something went wrong. Please try again.');
