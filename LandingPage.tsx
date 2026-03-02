@@ -306,8 +306,8 @@ function WaitlistForm({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
   }
 
   return (
-    <div className="flex flex-col gap-2">
-      <form onSubmit={handleSubmit} className="flex items-stretch gap-2">
+    <div className="flex flex-col gap-2 w-full">
+      <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-stretch gap-2 w-full">
         <input
           type="email"
           value={email}
@@ -315,13 +315,13 @@ function WaitlistForm({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
           placeholder="your@email.com"
           required
           disabled={loading}
-          className={`flex-1 min-w-0 rounded-full ${inputPx} ${inputPy} ${textSz} text-white placeholder-gray-500 outline-none focus:ring-2 focus:ring-accent-purple/50 transition-all disabled:opacity-60`}
+          className={`flex-1 min-w-0 w-full rounded-full ${inputPx} ${inputPy} ${textSz} text-white placeholder-gray-500 outline-none focus:ring-2 focus:ring-accent-purple/50 transition-all disabled:opacity-60`}
           style={{ background: 'rgba(26,31,53,0.9)', border: '1px solid rgba(42,49,71,0.8)' }}
         />
         <button
           type="submit"
           disabled={loading}
-          className={`flex-shrink-0 inline-flex items-center gap-2 rounded-full ${btnPx} ${btnPy} font-bold text-white ${textSz} transition-all hover:scale-105 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed disabled:scale-100`}
+          className={`sm:flex-shrink-0 w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full ${btnPx} ${btnPy} font-bold text-white ${textSz} transition-all hover:scale-105 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed disabled:scale-100`}
           style={{
             background: 'linear-gradient(135deg, #3b82f6, #8b5cf6)',
             boxShadow: '0 6px 24px rgba(139,92,246,0.4)',
@@ -1031,7 +1031,7 @@ export function LandingPage() {
                 No app store, no sign-up fees, no data sent anywhere — your data stays on your device.
               </p>
 
-              <div className="flex justify-center w-full max-w-lg mx-auto">
+              <div className="w-full max-w-lg mx-auto">
                 <WaitlistForm size="lg" />
               </div>
 
