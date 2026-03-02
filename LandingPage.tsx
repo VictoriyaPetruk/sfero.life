@@ -275,14 +275,12 @@ function WaitlistForm({ size = 'md' }: { size?: 'sm' | 'md' | 'lg' }) {
 
     try {
       await emailjs.send(
-        import.meta.env.VITE_EMAILJS_SERVICE_ID,
-        import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+        "service_dbcalgi",
+        "template_l21ckqw",
         {
-          to_email: import.meta.env.VITE_EMAILJS_TO_EMAIL,
           user_email: email,
           sent_at: new Date().toLocaleString(),
         },
-        { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY },
       );
       setSubmitted(true);
     } catch {
